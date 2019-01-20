@@ -1,0 +1,72 @@
+.table > tbody > tr.bomitem {
+    height: 35px;
+    vertical-align: middle;
+    padding: 0px;
+
+    .checkbox {
+        input[type="checkbox"] {
+            position: static;
+            margin: 0;
+        }
+    }
+
+    .react-toggle {
+        margin: 5px 0 0;
+    }
+
+    td {
+        padding: 0 5px;
+        vertical-align: middle;
+
+        .checkbox {
+            top: 5px;
+            margin: 0;
+        }
+
+        input[type="text"] {
+            margin:0;
+            border-radius:0;
+        }
+
+        .form-group {
+            margin:0;
+        }
+    }
+
+    td.edit {
+        padding: 0;
+    }
+
+    td.readonly {
+        background-color: @gray-lighter;
+        color: darken(@gray-lighter, 50%);
+    }
+
+    td.invalid {
+        color: #ec971f;
+    }
+
+    td:first-child .glyphicon {
+        margin-left: 3px;
+    }
+}
+
+.table > tbody > tr.bomitem.selected {
+    background-color: @brand-primary;
+    color: #f5f4f3;
+
+    td.readonly {
+        background-color: darken(@brand-primary, 5%);
+        color: darken(#f5f4f3, 5%);
+    }
+}
+
+.table > tbody > tr.bomitem.selected.last-selected {
+    background-color: @brand-primary-light;
+    color: #f5f4f3;
+
+    td.readonly {
+        background-color: darken(@brand-primary-light, 5%);
+        color: darken(#f5f4f3, 5%);
+    }
+}

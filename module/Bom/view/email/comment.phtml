@@ -1,0 +1,118 @@
+<!DOCTYPE html "-//w3c//dtd xhtml 1.0 transitional //en" "http://www.w3.org/tr/xhtml1/dtd/xhtml1-transitional.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title><?php echo ($this->isNew ? "New" : "Updated") ?> BoM Comment</title>
+  </head>
+<body>
+
+<div style="max-width: 500px; margin-left: auto; margin-right: auto; font-family: 'brandon-grotesque', 'Helvetica Neue', Helvetica, sans-serif;">
+  <table
+    border="0"
+    cellpadding="0"
+    cellspacing="0"
+    width="100%"
+    style="border-collapse:collapse; padding:0; margin:0px;">
+    <tr valign="top">
+      <td align="center">
+
+        <a href="https://manage.bomsquad.io" target="_blank">
+          <img
+            align="center"
+            src="<?php echo $this->imgBaseUrl ?>bomsquad-logo-vertical.png"
+            alt="BoM Squad"
+            title="BoM Squad" />
+        </a>
+
+        <hr style="height: 1px; border: 0; border-color: #F7BB58; background-color: #F7BB58; color: #F7BB58;" />
+
+          <table
+            border="0"
+            cellpadding="0"
+            cellspacing="0"
+            width="80%"
+            style="border-collapse:collapse; padding:0; margin:0px;">
+            <tr valign="top">
+              <td align="center">
+
+                <div style="text-align: left; color: black; font-size: 16px;">
+                  <p style="font-size: 18px; color: #FF8901;">
+                    Hi <?php echo $this->name ?>!
+                  </p>
+
+                  <p>
+                    You've got <?php echo ($this->isNew ? "new" : "updated") ?> messages from <a href="https://manage.bomsquad.io" target="_blank" style="text-decoration:none;"><strong style="color: #1FA2B0"> <?php echo $this->company ?></strong></a> on <?php echo $this->targetName ? $this->targetName : 'a product' ?>.
+                  </p>
+                </div>
+
+                <hr style="height: 1px; border: 0; border-color: #DBDBDB; background-color: #DBDBDB; color: #DBDBDB;" />
+
+                <table style="margin: 25px auto;" border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr valign="top">
+                    <td align="center" valign="middle" rowspan="3" width="100">
+                      <a href="https://manage.bomsquad.io" target="_blank">
+                        <img
+                          src="https://www.gravatar.com/avatar/<?php echo md5(strtolower(trim($this->fromEmail))) ?>?s=64&amp;d=retro"
+                          alt="<?php echo $this->from ?>"
+                          title="<?php echo $this->from ?>" />
+                      </a>
+                    </td>
+                    <td align="left" style="padding-left:25px;">
+                      <span style="font-size: 14px;">
+                        <strong style="text-decoration:none;"><?php echo $this->from ?></strong><span style="color: #5b5b5b;"> at <?php echo (new DateTime())->setTimestamp($this->createdAt)->format('h:i') ?> UTC</span>
+                      </span>
+                    </td>
+                  </tr>
+                  <tr valign="top">
+                    <td align="left" style="padding-left:25px;">
+                      <p style="font-size: 14px;">
+                        <?php echo $this->body; ?>
+                      </p>
+                    </td>
+                  </tr>
+                  <tr valign="top">
+                    <td align="left" style="padding-left:25px;">
+                      <a href="https://manage.bomsquad.io" target="_blank">
+                        <small>Open BoM Squad</small>
+                      </a>
+                    </td>
+                  </tr>
+                </table>
+
+                <hr style="height: 1px; border: 0; border-color: #DBDBDB; background-color: #DBDBDB; color: #DBDBDB;" />
+
+                <p>
+                  <span style="font-size:12px; line-height:17px; color: #5b5b5b;">
+                    Turn off email notifications and other settings <a href="https://manage.bomsquad.io/#/account">here</a>.
+                  </span><br>
+                </p>
+
+              </td>
+            </tr>
+          </table>
+
+          <hr style="height: 1px; border: 0; border-color: #F7BB58; background-color: #F7BB58; color: #F7BB58;" />
+
+          <div style="max-width: 100%;" align="center">
+            <a href="https://fabule.com" target="_blank">
+              <img
+                style="max-width: 46px"
+                src="<?php echo $this->imgBaseUrl ?>logo.png"
+                alt="Fabule"
+                title="Fabule" />
+            </a>
+          </div>
+
+          <div>
+            <span style="font-size:10px; line-height:17px; color:black;">
+              780 Av. Brewster - Montreal QC - H4C 2K1
+            </span>
+          </div>
+
+        </td>
+      </tr>
+    </table>
+
+  </div>
+
+</body>
+</html>

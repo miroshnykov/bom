@@ -1,0 +1,116 @@
+.bom-spreadsheet {
+    height: 100%;
+    position: relative;
+
+    .bom-toolbar {
+        margin:0 0 10px 0;
+        position: absolute;
+        height: @header-height;
+        width: 100%;
+        z-index: 25;
+        border-left: 1px solid #ddd;
+        border-bottom: 1px solid #ddd;
+        background-color: #fff;
+
+        label,
+        .editable-input{
+            padding: 5px;
+            margin-right: 9px;
+        }
+
+        .bom-name {
+            min-width: 125px;
+        }
+
+        .btn-group {
+            margin-top: 5px;
+        }
+    }
+
+    >.scroll {
+        padding: @header-height 15px 15px;
+    }
+
+    table {
+        table-layout: auto;
+        width: auto;
+        max-width: none;
+        min-width: 100%;
+        white-space: nowrap;
+
+        .checkbox {
+            input[type="checkbox"] {
+                position: static;
+                margin: 0;
+                width: 20px;
+                height: 20px;
+            }
+        }
+
+        th {
+            position: relative;
+
+            .checkbox {
+                top: 5px;
+                margin: 0;
+            }
+
+            .btn-add-column-wrapper {
+                position: absolute;
+                top: -10px;
+            }
+
+            .btn-add-column-right {
+                right: -15px;
+            }
+
+            .btn-add-column-left {
+                left: -15px;
+            }
+
+            .btn-add-column-wrapper .btn-add-column {
+                visibility: hidden;
+                position: relative;
+                top: -5px;
+                z-index: 30;
+            }
+
+            .btn-add-column-wrapper:hover .btn-add-column  {
+                visibility: visible;
+            }
+
+            .btn-toolbar {
+                margin: 2px 0 0 0;
+                padding:0 45px 0 0;
+                visibility: hidden;
+                display: inline-block;
+                vertical-align: middle;
+
+                .btn {
+                    padding: 0;
+                }
+            }
+        }
+
+        th:hover .btn-toolbar {
+            visibility: visible;
+        }
+
+        th.readonly {
+            color: #aaa;
+        }
+
+        th.icon {
+            width: 35px;
+            min-width: 35px;
+        }
+    }
+}
+
+.bom-spreadsheet-short {
+    padding-bottom: 280px
+}
+
+.bom-spreadsheet-tall {
+    padding-bottom: 22px;
+}

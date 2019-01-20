@@ -1,0 +1,656 @@
+@import "bootstrap/bootstrap.less";
+@import "font-awesome/font-awesome.less";
+@import "react-toggle/react-toggle.less";
+@import "variables.less";
+
+@import "animations.less";
+
+@import "For.less";
+
+// TODO use gulp-less-import
+@import "components/ActivityListItem.less";
+@import "components/ActivityHeader.less";
+@import "components/Alerts.less";
+@import "components/BomItem.less";
+@import "components/BomItemToolbar.less";
+@import "components/Breadcrumbs.less";
+@import "components/Button.less";
+@import "components/Carousel.less";
+@import "components/CommentItem.less";
+@import "components/CommentPanel.less";
+@import "components/Container.less";
+@import "components/ContentPage.less";
+@import "components/Cursor.less";
+@import "components/EditableLabel.less";
+@import "components/FilePanel.less";
+@import "components/Footer.less";
+@import "components/Sidebar.less";
+@import "components/EditableLabel.less";
+@import "components/modals/SaveViewModal.less";
+@import "components/ProductList.less";
+@import "components/Scroll.less";
+@import "components/Sidebar.less";
+@import "components/SimpleHeader.less";
+@import "components/Spinner.less";
+@import "components/CommentPanel.less";
+@import "components/Breadcrumbs.less";
+@import "components/Container.less";
+@import "components/Panel.less";
+@import "components/FileItem.less";
+
+@import "screens/Auth.less";
+@import "screens/BomDashboard.less";
+@import "screens/BomImport.less";
+@import "screens/BomSpreadsheet.less";
+@import "screens/NewBom.less";
+@import "screens/ProductDashboard.less";
+@import "screens/UserAccount.less";
+
+//
+// Legacy CSS code that was not ported
+//
+body, html {
+  height:100%;
+}
+
+/* Alert shown when app is disabled. */
+body > .alert {
+    margin: 15px;
+}
+
+a, a:visited, a:active, a:hover, a:focus {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.table>thead>tr>th.compact,
+.table>tbody>tr>td.compact {
+    width: 1px;
+}
+
+.table>thead>tr>th,
+.table>tbody>tr>td.nowrap {
+    white-space: nowrap;
+}
+
+table.table-bordered {
+    border: 1px solid #bbb;
+}
+
+table.table-bordered>thead>tr>th {
+    border: 1px solid #bbb;
+    background-color: #ddd;
+}
+
+.glyphicon-primary { color: #286090; }
+.glyphicon-success { color: #398439; }
+.glyphicon-danger { color: #76123c; }
+.glyphicon-info { color: #31b0d5; }
+.glyphicon-warning { color: #ec971f; }
+
+/* Spinning animation for loading icons. */
+.glyphicon-spin {
+  -webkit-animation: spin 2s infinite linear;
+  -moz-animation: spin 2s infinite linear;
+  -o-animation: spin 2s infinite linear;
+  animation: spin 2s infinite linear;
+}
+
+@-moz-keyframes spin {
+  0% {
+    -moz-transform: rotate(0deg);
+  }
+  100% {
+    -moz-transform: rotate(359deg);
+  }
+}
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+  }
+}
+@-o-keyframes spin {
+  0% {
+    -o-transform: rotate(0deg);
+  }
+  100% {
+    -o-transform: rotate(359deg);
+  }
+}
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+
+.row.no-gutter {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.row.no-gutter [class*='col-']:not(:first-child),
+.row.no-gutter [class*='col-']:not(:last-child) {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.vertical-align {
+    display: flex;
+    align-items: center;
+}
+
+.panel-body.no-padding {
+    padding: 0;
+}
+
+.popover {
+    white-space: nowrap;
+}
+
+/* Buttons. */
+
+.btn {
+    text-transform: uppercase;
+}
+
+.btn:focus, .btn:active {
+    outline: none !important;
+}
+
+.btn-nobg {
+    background: transparent !important;
+    border: 0px none !important;
+    box-shadow: none !important;
+}
+
+.btn-nobg.btn-default { color: @gray-light; }
+.btn-nobg.btn-default:hover { color: darken(@gray-light, 15%) }
+
+.btn-nobg.btn-primary { color: @brand-primary; }
+.btn-nobg.btn-primary:hover { color: darken(@brand-primary, 15%) }
+
+.btn-nobg.btn-success { color: @brand-success; }
+.btn-nobg.btn-success:hover { color: darken(@brand-success, 15%) }
+
+.btn-nobg.btn-info { color: @brand-info; }
+.btn-nobg.btn-info:hover { color: darken(@brand-info, 15%) }
+
+.btn-nobg.btn-warning { color: @brand-warning; }
+.btn-nobg.btn-warning:hover { color: darken(@brand-warning, 15%) }
+
+.btn-nobg.btn-danger { color: @brand-danger; }
+.btn-nobg.btn-danger:hover { color: darken(@brand-danger, 15%) }
+
+.btn-circle {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  padding: 6px 0;
+  font-size: 12px;
+  line-height: 1.428571429;
+  border-radius: 15px;
+}
+
+.form-horizontal .control-content {
+  padding-top: 7px;
+  margin-bottom: 0;
+}
+
+#app {
+  height: 100%;
+}
+
+.container-fluid {
+  height:100%;
+  padding: 0;
+
+  hr {
+    border-width: 2px 0;
+  }
+}
+
+.has-header {
+   padding:@header-height 0 0 0;
+}
+
+.full-height { height: 100%; }
+.full-width { width: 100%; }
+
+/* Modals. */
+
+.modal-session-timeout {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modal-session-timeout button.close {
+    display: none;
+}
+
+.modal-export {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modal-export button.close {
+    display: none;
+}
+
+/* Loader */
+
+.loader {
+    margin: -40px 0;
+    position: relative;
+    top: 50%;
+    font-size: 2em;
+    width: auto;
+    text-align: center;
+}
+
+/* Comments */
+
+.comment-table {
+  width: 100%;
+
+  .icon-cell {
+    vertical-align: middle;
+    text-align: center;
+    width: 5%;
+
+    .icon {
+      font-size: 1.4em;
+    }
+  }
+
+  &>tbody>tr>td.actions>button {
+    display: block;
+  }
+
+}
+
+/* Content */
+
+.content-area {
+  background: #f3f4f5;
+  height: 100%;
+  width: 100%;
+}
+
+.content {
+  height: 100%;
+  padding: 20px 15px;
+  overflow-y: scroll;
+}
+
+.center-panel {
+  height: 100%;
+  position: relative;
+  margin-left: @sidebar-width;
+}
+
+.center-panel-sidebar-offset {
+  margin-left:@sidebar-width;
+}
+
+
+/* Side panels. */
+
+.sidepanel {
+  background: #fff;
+}
+
+.sidepanel .list-group {
+  margin:20px 0 5px 0;
+}
+
+.sidepanel ul {
+  list-style: none;
+}
+
+.sidepanel .footer {
+  position: absolute;
+  bottom: 0;
+  right: 5px;
+}
+
+.sidepanel-left {
+  position: relative;
+  width: @sidebar-width;
+  height: 100%;
+  padding: 0;
+}
+
+.sidepanel-bottom {
+  position: absolute;
+  bottom: 0;
+  border-top: 1px solid #ddd;
+  border-left: 1px solid #ddd;
+  width: 100%;
+  overflow: hidden;
+}
+
+.sidepanel-bottom-open {
+    padding: 0 15px;
+    height: 280px;
+}
+
+.sidepanel-bottom-close {
+    cursor: pointer;
+    height: 22px;
+}
+
+.sidepanel-bottom-close button {
+    margin: 0;
+    padding: 3px 5px;
+}
+
+.sidepanel-bottom .closer {
+    position: absolute;
+    right: 50%;
+    top: 0;
+}
+
+.sidepanel-bottom .closer button {
+    margin: 0;
+    padding: 0 3px;
+    color: #aaa;
+}
+
+/* Sidepanel Revision List */
+
+#revision-list {
+  margin:20px 0;
+}
+
+#revision-list .btn-toolbar {
+  padding: 0 15px;
+  margin: 0;
+}
+
+#revision-list h3 {
+  padding: 0;
+  margin-top: 0;
+}
+
+#revision-list ul {
+  padding:0;
+}
+
+#revision-list > ul > li {
+  padding: 0;
+}
+
+#revision-list > ul > li > div {
+  padding: 3px 15px;
+}
+
+#revision-list .alert-success {
+  background: none;
+}
+
+#component-details h1 {
+  font-size: 1.25em;
+}
+
+#component-details .scrollable {
+    height: 80%;
+}
+
+#component-details .scrollable table {
+    margin-bottom: 0;
+}
+
+#component-tabs {
+  margin:20px 0 0 0;
+}
+
+#component-tabs .tab-pane {
+  padding: 20px 15px 0 15px;
+  border-left: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  height: 200px;
+}
+
+#component-tabs .history-tab-pane {
+    padding: 0;
+}
+
+#component-tabs .history-tab-pane > div {
+    padding: 0;
+}
+
+#component-tabs .history-tab-pane > div > div > table {
+    margin-bottom: 0;
+}
+
+#component-tabs .comments-tab-pane {
+    padding: 0;
+}
+
+#component-tabs .comments-tab-pane > div {
+    padding: 0;
+}
+
+#component-tabs .comments-tab-pane > div > div > table {
+    margin-bottom: 0;
+}
+
+#component-tabs .tab-content .active {
+  background-color: #fff;
+}
+
+/* User Profile */
+
+#profile .profile-header {
+  margin-bottom: 20px;
+}
+
+#profile .profile-content hr {
+  border-top: 1px solid #ddd;
+  margin-bottom: 30px;
+}
+
+#profile .profile-content .alert {
+  display: inline-block;
+  padding: 6px 12px;
+  background: none;
+  border: none;
+}
+
+#profile .profile-content .form-group .form-group {
+  margin: 0;
+}
+
+#profile .profile-content .form-control-feedback {
+  right: 0;
+}
+
+#profile .control-content {
+  padding-top: 7px;
+  margin-bottom: 0;
+  height: 34px;
+}
+
+#profile .placeholder {
+  color: #aaa;
+}
+
+/* Product */
+
+.product-header {
+  margin-bottom: 10px;
+}
+
+.product-header h1 {
+  font-size: 20px;
+  margin: 0;
+  display: inline-block;
+  padding: 5px 0;
+}
+
+.product-header .btn {
+    margin: 0 5px;
+    visibility: hidden;
+    position: relative;
+    top: -3px;
+}
+
+.product-header:hover .btn {
+    visibility: visible;
+}
+
+.product-header .form-group {
+    margin-bottom: 0;
+}
+
+.product-content h4 {
+  margin: 2px 0;
+}
+
+.product-content .btn-toolbar-right {
+  position: relative;
+  top: -3px;
+}
+
+.product-content .panel-heading {
+  padding-right: 5px;
+}
+
+.product-content .table>tbody>tr>td:last-child {
+    width: 1px;
+    padding: 5px;
+}
+
+.product-content .table>tbody>tr>td {
+    padding: 5px 15px;
+    vertical-align: middle;
+}
+
+.product-content .bom-table>tbody>tr>td:first-child .btn {
+    margin-left: 5px;
+    visibility: hidden;
+}
+
+.product-content .bom-table>tbody>tr>td:first-child:hover .btn {
+    visibility: visible;
+}
+
+.product-content .bom-table>tbody>tr>td:nth-child(2) {
+    padding-top: 8px;
+}
+
+.product-content .table>tbody>tr>td:last-child {
+    width: 1px;
+    padding: 5px;
+    vertical-align: top;
+}
+
+.product-content td button.btn-danger {
+  color: #76123c;
+}
+
+.component-details-list td label {
+  margin-bottom: 0;
+}
+
+/* Add Column Modal */
+
+.modal-add-column .modal-content {
+  overflow: visible !important;
+}
+
+.modal-edit-column .modal-content {
+  overflow: visible !important;
+}
+
+.modal-add-column .form-group .open .dropdown-menu {
+    height: auto;
+    max-height: 200px;
+    overflow-x: hidden;
+}
+
+/* Edit Column Modal */
+
+.modal-edit-column .form-group .open .dropdown-menu {
+    height: auto;
+    max-height: 200px;
+    overflow-x: hidden;
+}
+
+/* Bom History */
+
+.bom-history-header {
+  margin:0 0 10px 0;
+}
+
+.bom-history-header h1 {
+  font-size: 20px;
+  margin: 0 9px 0 5px;
+  display: inline-block;
+  padding: 5px 9px 5px 0;
+  margin-right: 9px;
+}
+
+.bom-history .table>thead {
+  white-space: nowrap;
+}
+
+.bom-history .table>thead>tr>th.compact {
+  width: 1px;
+}
+
+.bom-history .table>tbody>tr>td {
+    padding: 5px 15px;
+    vertical-align: middle;
+}
+
+.bom-history .table>tbody>tr>td.nowrap {
+  white-space: nowrap;
+}
+
+.bom-history td .glyphicon-sm {
+  padding: 5px 10px;
+}
+
+/* Welcome Wizard */
+
+#welcome-wizard {
+    padding: 20px 15px;
+}
+
+.bom-title {
+  padding-bottom: 20px !important;
+}
+
+.bom-table-index {
+  min-width: 50px;
+}
+
+.dark-background {
+  background-color: @dark-background-color;
+  color: @dark-background-text-color;
+
+  .panel-default {
+    color: @text-color;
+  }
+}
+
+.generate-font-multiplier(12);
+
+.generate-font-multiplier(@n, @i: 1) when (@i =< @n) {
+  .font-@{i}x {
+    font-size: (@i * 1em);
+  }
+  .generate-font-multiplier(@n, (@i + 1));
+}
+
+.panel-title-icon {
+  margin-right: 10px;
+}

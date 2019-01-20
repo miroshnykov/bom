@@ -1,0 +1,130 @@
+.bom-import-form {
+    .btn-browse {
+        min-width: 100px;
+    }
+
+    .btn-import {
+        min-width: 101px;
+    }
+
+    .bom-import-options {
+        margin-bottom: 20px;
+
+        .form-group {
+            margin: 0 0 15px 0;
+            display: block;
+
+            label {
+                margin-right: 15px;
+            }
+
+            input[id="delimiter"] {
+                width: 40px;
+                text-align: center;
+            }
+        }
+
+        .dropdown-menu {
+            min-width: 0;
+        }
+
+    }
+}
+
+.bom-import-match {
+    h1 {
+        margin-top: 0;
+    }
+
+    .dropdown-menu .divider {
+        height: 2px;
+    }
+
+    table {
+        border-spacing: 20px 0;
+        border-collapse: separate;
+        table-layout: auto;
+        width: auto;
+        max-width: none;
+        min-width: 100%;
+        white-space: nowrap;
+        margin-left: -20px;
+    }
+
+    .table>thead>tr>th {
+        // position: relative;
+
+        .form-inline {
+            margin-bottom: 20px;
+
+            .form-group {
+                margin-right: 5px;
+            }
+        }
+    }
+
+    .table>thead>tr>th,
+    .table>thead:first-child>tr:first-child>th,
+    td {
+        vertical-align: top;
+    }
+
+    .table>thead>tr>th,
+    .table>thead:first-child>tr:first-child>th {
+        border-left: 1px solid #000;
+        border-right: 1px solid #000;
+        border-top: 1px solid #000;
+        border-bottom: 1px solid #000;
+        color: #000;
+    }
+
+    .table>thead>tr>th .form-group .open .dropdown-menu {
+        height: auto;
+        max-height: 200px;
+        overflow-x: hidden;
+    }
+
+    tr > td {
+        border-left: 1px solid #000;
+        border-right: 1px solid #000;
+        border-top: none;
+        border-bottom: 1px solid #000;
+        color: #000;
+    }
+
+    tr:last-child > td {
+        border-bottom: 1px solid #000;
+        color: #000;
+    }
+
+    .table>thead>tr>th.readonly,
+    .table>thead:first-child>tr:first-child>th.readonly,
+    tr > td.readonly {
+        border-color: #999;
+        color: #999;
+    }
+
+    .table>thead>tr>th.active,
+    .table>thead:first-child>tr:first-child>th.active,
+    tr > td.active {
+        border-color: #f90;
+    }
+
+    .table>thead>tr>th.skipped,
+    .table>thead:first-child>tr:first-child>th.skipped,
+    tr > td.skipped {
+        border-color: #ccc;
+        color: #ccc;
+        text-decoration: line-through;
+    }
+
+    .table>thead>tr>th.saved,
+    .table>thead:first-child>tr:first-child>th.saved,
+    tr > td.saved {
+        border-color: #337ab7;
+    }
+
+    .btn-toolbar {
+        margin: 20px 0 0 0;
+    }
+}

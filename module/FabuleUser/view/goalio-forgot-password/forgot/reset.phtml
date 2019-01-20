@@ -1,0 +1,80 @@
+<?php
+
+$form = $this->resetForm;
+
+$form->prepare();
+$form->setAttribute('action', $this->url('zfcuser/resetpassword', array('userId' => $this->userId, 'token' => $this->token)));
+$form->setAttribute('method', 'post');
+
+
+
+//Format errors
+$error = "";
+$error .= $this->formElementErrors()
+        ->setMessageOpenFormat('<strong>')
+        ->setMessageSeparatorString('</strong><br/><strong>')
+        ->setMessageCloseString('</strong>')
+        ->render($form->get('newCredential'));
+if($error)
+    $error .= "<br/>";
+$error .= $this->formElementErrors()
+        ->setMessageOpenFormat('<strong>')
+        ->setMessageSeparatorString('</strong><br/><strong>')
+        ->setMessageCloseString('</strong>')
+        ->render($form->get('newCredentialVerify'));
+
+?>
+
+<div class="reset">
+    <header class="simple-header">
+        <div class="logo"></div>
+        <p><?php echo sprintf($this->translate('Change Password for %s'), $this->escapeHtml($this->email)); ?></p>
+    </header>
+    <div class="panel panel-primary">
+        <div class="panel-body">
+            <?php echo $this->form()->openTag($form); ?>
+
+            <div class="form-group">
+                <?php echo $this->formLabel($form->get('newCredential')); ?>
+                <div class="col-md-8">
+                    <?php echo $this->formInput($form->get('newCredential')); ?>
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <?php  echo $this->formLabel($form->get('newCredentialVerify')); ?>
+                <div class="col-md-8">
+                    <?php echo $this->formInput($form->get('newCredentialVerify')); ?>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-10 col-md-offset-2">
+                    <?php echo $this->formButton($form->get('submit')); ?>
+                </div>
+            </div>
+
+            <?php if ($error) { ?>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <div class="alert alert-danger alert-dismissible" role="alert">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <strong><?= $error ?></strong>
+                        </div>
+                    </div>
+                </div>
+            <?php } ?>
+
+            <?php echo $this->form()->closeTag() ?>
+
+        </div>
+        <div class="panel-footer">
+            <div class="row">
+                <div class="col-md-offset-6 col-md-6 text-right">
+                    <a href="<?php echo $this->url('zfcuser/login') ?>"><?php echo $this->translate('I remember! Sign in.'); ?></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

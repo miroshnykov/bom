@@ -1,0 +1,49 @@
+.activity-list-item {
+	height: 100px;
+
+	&:not(:last-child) {
+		border-bottom: 1px @panel-default-border solid;
+		margin-bottom: 10px;
+	}
+
+	&:last-child {
+		margin-bottom: -15px;
+	}
+
+	.item-link {
+		display: block;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+
+	.display-name {
+		font-weight: bold;
+		width: 100%;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+
+	.img-thumbnail {
+		display: block;
+
+		@media (max-width: @screen-sm-max) {
+			position: absolute;
+			right: 12px;
+			top: 0;
+		}
+	}
+
+	.description {
+		margin-left: 20px;
+
+		@media (max-width: @screen-sm-max) {
+			margin-left: 10px;
+		}
+	}
+
+	.fa {
+		width: 18px;
+	}
+}

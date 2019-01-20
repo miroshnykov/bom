@@ -1,0 +1,87 @@
+.bom-carousel {
+	@carousel-gray: lighten(@gray-light, 30%);
+
+	.carousel-controls {
+		@indicator-size: 1.3em;
+
+		text-align: center;
+		margin-top: 40px;
+		margin-bottom: 30px;
+
+		.indicators {
+			display: inline-block;
+			margin: 0 15px;
+			vertical-align: middle;
+
+			li {
+				display: inline-block;
+				margin: 0 8px;
+				color: @carousel-gray;
+				font-size: @indicator-size;
+			}
+
+			.active {
+				color: @brand-primary;
+			}
+		}
+
+		.arrow {
+			font-size: @indicator-size * 1.5;
+			vertical-align: middle;
+		}
+
+		.disabled {
+			color: @carousel-gray;
+		}
+	}
+	.carousel-content {
+		margin: 30px 0 20px 0;
+		width: 100%;
+
+		.carousel-images {
+
+			position: relative;
+			height: 200px;
+
+			@media (min-width: @screen-lg-min) {
+				height: 370px;
+			}
+
+			@media (min-width: @screen-md-min) and (max-width: @screen-md-max) {
+				height: 350px;
+			}
+
+			@media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
+				height: 290px;
+			}
+
+			.carousel-image {
+				position: absolute;
+				top: 0;
+				width: 100%;
+
+				img {
+					@animation: opacity 0.3s ease-in-out;
+
+					max-width: 960px;
+					width: 95%;
+					margin: 0 auto;
+					display: block;
+					position: relative;
+
+					box-shadow: 0 0 10px @carousel-gray;
+					opacity: 0;
+
+					-webkit-transition: @animation;
+					-moz-transition: @animation;
+					-o-transition: @animation;
+					transition: @animation;
+				}
+
+				.visible {
+					opacity: 1;
+				}
+			}
+		}
+	}
+}

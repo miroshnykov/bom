@@ -1,0 +1,27 @@
+.editable{
+    &-label {
+        &:hover,
+        &:focus {
+            background-color: lighten(yellow, 40%);
+        }
+
+        &:not(.inline) {
+            padding: 5px;
+        }
+
+        &.inline {
+            margin: 0;
+            font-weight: normal;
+        }
+    }
+
+    &-input {
+        display: inline-block;
+        margin-top: 0;
+        margin-botton: 0;
+
+        &.inline {
+            margin: 0;
+        }
+    }
+}

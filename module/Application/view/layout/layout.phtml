@@ -1,0 +1,51 @@
+<?php echo $this->doctype(); ?>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <?php
+            echo $this->headTitle('ZF2 '. $this->translate('Skeleton Application'))->setSeparator(' - ')->setAutoEscape(false);
+            echo $this->headMeta()
+              ->appendName('viewport', 'width=device-width, initial-scale=1.0')
+              ->appendName('description', '')
+              ->appendName('author', '');
+            echo $this->headScript();
+            echo $this->headLink()
+                ->prependStylesheet("https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.2/css/bootstrap.min.css");
+        ?>
+    </head>
+    <body>
+        <div class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </a>
+                    <a class="brand" href="<?php echo $this->url('home') ?>"><?php echo $this->translate('Skeleton Application') ?></a>
+                    <div class="nav-collapse">
+                        <ul class="nav">
+                            <li class="active"><a href="<?php echo $this->url('home') ?>"><?php echo $this->translate('Home') ?></a></li>
+                        </ul>
+                    </div><!--/.nav-collapse -->
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <?php echo $this->content; ?>
+            <hr>
+            <footer>
+                <p>&copy; 2005 - 2012 by Zend Technologies Ltd. <?php echo $this->translate('All rights reserved.') ?> - <a href="<?php echo $this->url('info'); ?>">phpinfo</a></p>
+            </footer>
+        </div> <!-- /container -->
+
+        <!-- Scripts -->
+        <?php
+          echo $this->inlineScript()
+            ->prependFile('https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js', 'text/javacript', array('conditional' => 'lt IE 9'))
+            ->prependFile($this->basePath() . '/js/ie10-viewport-bug-workaround.js', 'text/javascript', array('conditional' => 'IEMobile 10'))
+            ->prependFile('https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js')
+        ?>
+    </body>
+</html>

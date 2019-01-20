@@ -1,0 +1,91 @@
+---Install Commands
+composer update
+npm install
+npm run-script build-jsx
+npm run-script build-debug-all
+
+--- Doctrine Commands
+from project root
+vendor/bin/doctrine-module orm:schema-tool:drop --force
+vendor/bin/doctrine-module orm:validate-schema
+vendor/bin/doctrine-module orm:schema-tool:create --dump-sql
+vendor/bin/doctrine-module orm:schema-tool:create
+vendor/bin/doctrine-module orm:schema-tool:update --dump-sql
+vendor/bin/doctrine-module orm:schema-tool:update --force
+
+--- Deplay to Heroku from local
+git push heroku-dev dev:master
+
+--- DB Scripts for OAuth
+/data/sql/oauth_schema.sql contains the sql for build oauth tables in postgres
+/data/sql/oauth_client.sql contains the sql to create an oauth client
+
+---Apigility Dev Mode
+
+cd /path/to/project
+php public/index.php development enable
+php public/index.php development disable
+php -S 0:8080 -t public/ public/index.php
+
+browse to http://bom.develop/apigility/ui
+
+https://github.com/jakubroztocil/httpie is your friend
+
+--- OAuth Login
+http -a testclient:testpass POST bom.develop/oauth/ username=angela@fabule.com password=12341234 grant_type=password
+http -a testclient:testpass POST bom.develop/oauth/ username=user@user.com password=123123123 grant_type=password
+
+
+
+--- Httpie request with Bearer token
+http -v <uri> "Authorization:Bearer <access_token>"
+
+
+--- Create Blank Product
+
+http -v POST bom.develop/apiproxy/product "Authorization:Bearer <access_token>" name='Product name'
+
+http POST bom.develop/apiproxy/product
+
+http -v POST bom.develop/api/product "Authorization:Bearer f3fa7a1d4e9b732df52be9c4c0723e9e407f60d7"
+
+
+http -v POST bom.develop/api/product "Authorization:Bearer 5fde7ee201b1a431915a0e411d64620ab4fec027" name="Product 7"
+
+
+
+
+http -v POST bom.develop/api/product/80/bom "Authorization:Bearer e1b9193bc04dadcf2903009c9d2f0388b80920df" name="Bom 456" _embedded:={\"menu\": {\"id\": \"123\"}}
+
+echo '{\"name\": \"John\"}' | http -v POST bom.develop/api/product/80/bom "Authorization:Bearer e1b9193bc04dadcf2903009c9d2f0388b80920df"
+
+http -v POST bom.develop/api/product/80/bom "Authorization:Bearer e1b9193bc04dadcf2903009c9d2f0388b80920df" name="Bom 456" _embedded:=@embedded.json
+
+
+
+http -v GET bom.develop/api/1/product "Authorization:Bearer f9fffbbde2e9530077c5b65b9ae3f876d9ffed16"
+
+
+http -v POST bom.develop/api/1/product "Authorization:Bearer 4ddfbadc23c7c93d2a51fcb3715b6349051762d7"
+
+http -v POST bom.develop/api/1/field "Authorization:Bearer f0e36700934d0f38966fb8df6721a65c945b6897"
+
+http -v POST bom.develop/api/21/product "Authorization:Bearer 3b18823ae1e8d0110ac9e09a780447e0ce08f703" name="Product 99"
+
+
+worker
+    php public/index.php queue sqs awsQueue --visibilityTimeout=20 --waitTime=20
+        jobs
+            run script directly to delete tokens
+                php public/index.php cleanOAuthTokens
+            add to queue
+                php public/index.php queueCleanOAuthTokens
+
+            run script to check for failed uploads
+                php public/index.php checkForFailedUploads
+            add to queue
+                php public/index.php queueCheckForFailedUploads
+
+            run script to create folders for existing companies
+                php public/index.php createdFoldersInS3ForExistingCompanies
+

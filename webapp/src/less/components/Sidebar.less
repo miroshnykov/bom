@@ -1,0 +1,146 @@
+.sidebar {
+    background: #fff;
+    z-index: 50;
+    -webkit-box-shadow: 0 2px 3px rgba(0,0,0,.25);
+    -moz-box-shadow: 0 2px 3px rgba(0,0,0,.25);
+    box-shadow: 0 2px 3px rgba(0,0,0,.25);
+    position: relative;
+    width: @sidebar-width;
+    height: 100%;
+    padding: 0;
+
+    header {
+        position: absolute;
+        border-bottom: 1px solid #ddd;
+        height: @header-height;
+
+        .btn-logo {
+            padding: 8px;
+            border: 0;
+            border-right: 1px solid #ddd;
+
+            &:hover {
+                background-color: #eee;
+            }
+
+            a {
+                outline: 0;
+            }
+
+            .logo {
+                width:32px;
+                height:32px;
+                background-image: url(../images/logo/bomsquad-logo-gear-blue-32px.png);
+            }
+        }
+
+        .menu {
+            width: @sidebar-width - @logo-width - 2;
+            display: inline-block;
+            padding: 0 15px;
+            position: relative;
+            top: 5px;
+
+            .user-name {
+                position: relative;
+                top: 2px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+            .btn-group {
+                margin-left: 5px;
+
+                >.dropdown-toggle {
+                    padding: 0;
+                    background: none;
+                }
+
+                >.dropdown-toggle:hover {
+                    background-color: #000;
+                    background-color: rgba(0, 0, 0, 0.1);
+                }
+            }
+        }
+    }
+
+    &-content {
+        padding-top: @header-height;
+        padding-bottom: @footer-height;
+        height: 100%;
+
+
+        .list-group {
+            margin:20px 0 5px 0;
+        }
+
+        ul {
+          list-style: none;
+        }
+    }
+
+    footer {
+        position: absolute;
+        bottom: 0;
+        height: @footer-height;
+        width: 100%;
+
+        .btn {
+            border-top: 1px solid #ddd;
+            padding: 12px;
+            font-weight: 700;
+            width: 100%;
+
+            .fa-heart {
+                color: @brand-danger;
+            }
+        }
+
+        .help {
+            .hidden-xs;
+            stroke: @brand-primary;
+            stroke-width: 2px;
+            fill: none;
+            position: absolute;
+            left: @sidebar-width;
+            bottom: 0;
+
+
+            .arrow {
+                .pull-left;
+
+                position: relative;
+                top: 5px;
+                left: 2px;
+
+                .triangle {
+                    stroke-width: 1px;
+                    fill: @brand-primary;
+                }
+            }
+
+            .text {
+                text-align: left;
+                position: relative;
+                left: 6px;
+                top: -30px;
+                width: (@sidebar-width + 120);
+                color: @brand-primary;
+
+                .dismiss {
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                    opacity: 0.2;
+                }
+
+                &:hover {
+                    .dismiss {
+                        opacity: 1.0;
+                    }
+                }
+            }
+        }
+    }
+}
+

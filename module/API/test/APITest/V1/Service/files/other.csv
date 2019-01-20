@@ -1,0 +1,50 @@
+"Qty"#"Value"#"Device"#"Package"#"Parts"#"Description"#"MF"#"MPN"#"OC_FARNELL"#"OC_NEWARK"#
+"2"#""#"M03PTH"#"1X03"#"MODULE1_PWR, MODULE2_PWR"#"Header 3"#""#""#""#""#
+"2"#""#"M04PTH"#"1X04"#"MODULE1_SENSE, MODULE2_SENSE"#"Header 4"#""#""#""#""#
+“2”#”0.022u"#"C-USC0805"#"C0805"#"C12"#"CAPACITOR, American symbol"#""#""#""#""#
+"1"#"1.0u"#"C-USC1210"#"C1210"#"C10"#"CAPACITOR, American symbol"#""#""#""#""#
+"7"#"100n"#"C-EUC0603"#"C0603-ROUND"#"C1, C2, C6, C9, C13, C15, C22"#"CAPACITOR, European symbol"#""#""#""#""#
+"1"#"10K"#"4R-NCAY16"#"CAY16"#"RN1"#"Array Chip Resistor"#""#""#"unknown"#"unknown"#
+"1"#"10uF"#"CPOL-EUSMCB"#"SMC_B"#"C8"#"POLARIZED CAPACITOR, European symbol"#""#""#""#""#
+"1"#"10x1"#"PINHD-1X10"#"1X10"#"JP1"#"PIN HEADER"#""#""#""#""#
+"1"#"16MHz"#"XTAL_THRU_SMD"#"XTAL_THRU_SMT"#"X1"#""#""#""#""#""#
+"1"#"1K"#"4R-NCAY16"#"CAY16"#"RN2"#"Array Chip Resistor"#""#""#"unknown"#"unknown"#
+"1"#"1M"#"RESISTOR0805-RES"#"0805"#"R1"#"Resistor"#""#""#""#""#
+"2"#"1u"#"C-EUC0603"#"C0603-ROUND"#"C11, C14"#"CAPACITOR, European symbol"#""#""#""#""#
+"2"#"1uF"#"C-EUC0603"#"C0603-ROUND"#"C5, C7"#"CAPACITOR, European symbol"#""#""#""#""#
+"1"#"22R"#"4R-NCAY16"#"CAY16"#"RN3"#"Array Chip Resistor"#""#""#"unknown"#"unknown"#
+"2"#"22p"#"C-EUC0603"#"C0603-ROUND"#"C3, C4"#"CAPACITOR, European symbol"#""#""#""#""#
+"2"#"237"#"R-US_R0603"#"R0603"#"R4, R7"#"RESISTOR, American symbol"#""#""#""#""#
+"1"#"270m"#"R-US_R0805"#"R0805"#"R9"#"RESISTOR, American symbol"#""#""#""#""#
+"1"#"2x1"#"M023.5MM"#"SCREWTERMINAL-3.5MM-2"#"PWR_EXP"#"Header 2"#""#""#""#""#
+"1"#"316K"#"R-EU_R0603"#"R0603-ROUND"#"R8"#"RESISTOR, European symbol"#""#""#""#""#
+"2"#"47u"#"CAP-ELECTRO-C"#"ELECTRO-SMD-C-6MM"#"CP1, CP2"#"Electrolytic Capacitors,Tantalum Capacitors and Super Capacitors"#""#""#""#""#
+"1"#"4x1"#"M04LONGPADS"#"1X04_LONGPADS"#"LED_EXP"#"Header 4"#""#""#""#""#
+"4"#"53.6"#"R-US_R0603"#"R0603"#"R2, R3, R5, R6"#"RESISTOR, American symbol"#""#""#""#""#
+"1"#"6x1"#"PINHD-1X6"#"1X06"#"JP4"#"PIN HEADER"#""#""#""#""#
+"2"#"8x1"#"PINHD-1X8"#"1X08"#"JP2, JP3"#"PIN HEADER"#""#""#""#""#
+"1"#"ALLEGRO_A6210"#"ALLEGRO_A6210"#"ALLEGRO_A6210"#"U4"#""#""#""#""#""#
+"1"#"ATMEGA32U4-XUAU"#"ATMEGA32U4-XUAU"#"TQFP44-PAD"#"U1"#""#""#""#""#""#
+"1"#"ATMEGA32U4-XUMU"#"ATMEGA32U4-XUMU"#"QFN44ML7X7"#"U2"#""#""#""#""#""#
+"1"#"CD1206-S01575"#"DIODE-MINIMELF"#"MINIMELF"#"D2"#"DIODE"#""#""#""#""#
+"2"#"COMAX_MINISWITCH"#"COMAX_MINISWITCH"#"COMAX_MINISWITCH"#"RST, RST1"#""#""#""#""#""#
+"1"#"FDN340P"#"PMOSSOT23"#"SOT-23"#"T1"#"MOS FET"#""#""#"unknown"#"unknown"#
+"1"#"GREEN"#"LEDCHIPLED_0603"#"CHIPLED_0603"#"ON"#"LED"#""#""#""#""#
+"6"#"HANGZHOU_MULTICOLOR_3535WSA"#"HANGZHOU_MULTICOLOR_3535WSA"#"HANGZHOU_MULTCOLOR_3535WSZ"#"RGB1, RGB2, RGB3, RGB4, RGB5, RGB6"#""#""#""#""#""#
+"1"#"ICSP"#"PINHD-2X3"#"2X03"#"ICSP"#"PIN HEADER"#""#""#""#""#
+"1"#"LMV358MMX"#"LMV358MMX"#"MSOP08"#"IC2"#"Dual General Purpose, Low Voltage, Rail-to-Rail Output Operational Amplifiers"#""#""#""#""#
+"1"#"LP2985-XXDBVR33"#"LP2985-XXDBVR33"#"SOT23-DBV"#"U3"#"ULTRALOW-POWER 50-mA LOW-DROPOUT LINEAR REGULATORS"#""#""#""#""#
+"1"#"M7"#"DIODE-SMB"#"SMB"#"D1"#"DIODE"#""#""#""#""#
+"1"#"MC33269ST-3.3T3"#"MC33269ST-3.3T3"#"SOT223"#"IC1"#"Adjustable Output Low Dropout Voltage Regulator 800 mA"#""#""#""#""#
+"1"#"MF-MSMF050-2 500mA"#"L-EUL1812"#"L1812"#"F1"#"INDUCTOR, European symbol"#""#""#""#""#
+"2"#"MH2029-300Y"#"WE-CBF_0805"#"0805"#"L1, L2"#"SMD EMI Suppression Ferrite Beads"#""#""#""#""#
+"1"#"MOLEX_VERT_MINIUSB"#"MOLEX_VERT_MINIUSB"#"MOLEX_VERT_MINIUSB"#"J1"#""#""#""#""#""#
+"2"#"NM"#"R_0402_NM"#"R0402_NM"#"R10, R11"#""#""#""#""#""#
+"1"#"SCHOTTKY"#"SCHOTTKY-DIODESMD"#"SMB"#"D3"#"Schottky Diode"#""#""#""#""#
+"3"#"SI2302DS_MOSFET"#"SI2302DS_MOSFET"#"SI2302DS_MOSFET"#"TBLUE, TGREEN, TRED"#""#""#""#""#""#
+"1"#"TAIYO_YUDEN_6045_INDUCTOR"#"TAIYO_YUDEN_6045_INDUCTOR"#"TAIYO_YUDEN_6045_INDUCTOR"#"I_LEDDRIVER"#""#""#""#""#""#
+"2"#"VARISTORCN0603"#"VARISTORCN0603"#"CT/CN0603"#"Z1, Z2"#"VARISTOR"#""#""#""#""#
+"1"#"VERT_PWRJACK_PJ-006A_CUIINC"#"VERT_PWRJACK_PJ-006A_CUIINC"#"VERT_PWRJACK_PJ-006A_CUIINC"#"PWR_JACK"#""#""#""#""#""#
+"1"#"XH_JST_CONN_2POS_TOP"#"XH_JST_CONN_2POS_TOP"#"XH_JST_CONN_2POS_TOP"#"2PIN_CONN"#""#""#""#""#""#
+"1"#"XH_JST_CONN_3POS_SIDE_SMT"#"XH_JST_CONN_3POS_SIDE_SMT"#"XH_JST_CONN_3POS_SIDE_SMT"#"IR_CONNECT"#""#""#""#""#""#
+"2"#"YELLOW"#"LEDCHIPLED_0603"#"CHIPLED_0603"#"RX, TX"#"LED"#""#""#""#""#

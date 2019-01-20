@@ -1,0 +1,52 @@
+<?php echo $this->doctype(); ?>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <?php
+          echo $this->headMeta()->appendHttpEquiv('X-UA-Compatible','IE=edge')
+            ->appendName('viewport', 'width=device-width, initial-scale=1.0')
+            ->appendName('description', '')
+            ->appendName('author', '');
+
+          echo $this->headTitle('BoM Squad')->setSeparator(' - ')->setAutoEscape(false);
+          echo $this->headStyle();
+          echo $this->headLink();
+        ?>
+
+        <script src="//use.typekit.net/fon5yaj.js"></script>
+        <script>try{Typekit.load();}catch(e){}</script>
+
+        <script>
+          var appConfig = {
+            'debug': "<?php echo (getenv('APPLICATION_ENV') === 'development' ? 'true' : 'false')  ?>",
+            'intercomToken': "<?php echo (getenv('INTERCOM_TOKEN') ? getenv('INTERCOM_TOKEN') : 'qztdrrdo') ?>",
+            'pusher': {
+              'key': "<?php echo $this->pusherToken; ?>"
+            }
+          };
+        </script>
+
+        <!-- Intercom -->
+        <script>(function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',intercomSettings);}else{var d=document;var i=function(){i.c(arguments)};i.q=[];i.c=function(args){i.q.push(args)};w.Intercom=i;function l(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/aal1eefr';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);}if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})()</script>
+        <!-- /Intercom -->
+
+        <!-- start Mixpanel --><script type="text/javascript">(function(f,b){if(!b.__SV){var a,e,i,g;window.mixpanel=b;b._i=[];b.init=function(a,e,d){function f(b,h){var a=h.split(".");2==a.length&&(b=b[a[0]],h=a[1]);b[h]=function(){b.push([h].concat(Array.prototype.slice.call(arguments,0)))}}var c=b;"undefined"!==typeof d?c=b[d]=[]:d="mixpanel";c.people=c.people||[];c.toString=function(b){var a="mixpanel";"mixpanel"!==d&&(a+="."+d);b||(a+=" (stub)");return a};c.people.toString=function(){return c.toString(1)+".people (stub)"};i="disable track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.set_once people.increment people.append people.union people.track_charge people.clear_charges people.delete_user".split(" ");
+        for(g=0;g<i.length;g++)f(c,i[g]);b._i.push([a,e,d])};b.__SV=1.2;a=f.createElement("script");a.type="text/javascript";a.async=!0;a.src="undefined"!==typeof MIXPANEL_CUSTOM_LIB_URL?MIXPANEL_CUSTOM_LIB_URL:"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";e=f.getElementsByTagName("script")[0];e.parentNode.insertBefore(a,e)}})(document,window.mixpanel||[]);
+        mixpanel.init("<?php echo getenv('MIXPANEL_TOKEN') ?>");</script><!-- end Mixpanel -->
+
+        <script src="https://js.pusher.com/2.2/pusher.min.js"></script>
+    </head>
+    <body>
+
+        <div id="app"></div>
+        <!-- Scripts -->
+        <?php
+          echo $this->inlineScript()
+            ->prependFile('https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js', 'text/javacript', array('conditional' => 'lt IE 9'))
+            ->prependFile($this->basePath() . '/js/ie10-viewport-bug-workaround.js', 'text/javascript', array('conditional' => 'IEMobile 10'));
+        ?>
+    </body>
+</html>
+
+

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>You're invited to BoM Squad!</title>
+</head>
+<body style="max-width: 600px;font-size: 18px;font-family: 'Brandon Grotesque', Helvetica, sans-serif;background-color: #fefefe;margin: 0 auto; padding-bottom:1px">
+    <!-- BEGIN PREHEADER -->
+    <table border="0" cellpadding="0" cellspacing="0" width="100%" id="templatePreheader" style="mso-table-lspace: 0pt;mso-table-rspace: 0pt;background-color: #ffffff;border-top: 0;border-bottom: 0;border-collapse: collapse !important;">
+        <tbody>
+            <tr>
+                <td class="preheaderContent" style="padding-top: 15px;padding-right: 20px;padding-bottom: 15px;padding-left: 20px;mso-table-lspace: 0pt;mso-table-rspace: 0pt;color: #00abc0;font-family: Verdana;font-size: 10px;line-height: 100%;text-align: left;border-collapse: collapse !important;"></td>
+                <!--  -->
+                <td width="200" class="preheaderContent" style="padding-top: 15px;padding-right: 20px;padding-bottom: 15px;padding-left: 20px;mso-table-lspace: 0pt;mso-table-rspace: 0pt;color: #00abc0;font-family: Verdana;font-size: 10px;line-height: 100%;text-align: left;border-collapse: collapse !important;">
+                    Email not displaying correctly?<br>
+                    <a href="<?php echo $this->inviteUrl ?>" target="_blank" style="color: #00abc0;font-weight: normal;text-decoration: underline;">View it in your browser</a>.
+                </td>
+                <!--  -->
+            </tr>
+        </tbody>
+    </table>
+    <!-- END PREHEADER -->
+    <div id="logo" style="text-align: center;padding: 4% 2% 2%;background-color: #ffffff;">
+       <img src="<?php echo $this->imgBaseUrl ?>logo/bomsquad-logo-vert-md.png">
+    </div>
+    <div id="wrapper" style="font-size: 18px;width: 90%;font-family: 'Brandon Grotesque', Helvetica, sans-serif;background-color: #ffffff;margin: 2% auto;padding: 3%;">
+        <header>
+            <center>
+                <h1 style="font-size: 30px;font-family: 'Brandon Grotesque', Helvetica, sans-serif;padding: 0%;">You're invited to join BoM Squad!</h1>
+            </center>
+        </header>
+        <article class="top" style="float: none;width: 100%;">
+            <center>
+                <h3 style="font-size: 16px;font-family: 'Brandon Grotesque', Helvetica, sans-serif;font-style: normal;font-weight: normal;">
+                    <?php
+                        if ($this->companyName) {
+                            echo $this->companyName . " uses BoM Squad. ";
+                        }
+                        if ($this->inviter) {
+                            echo $this->inviter . " has invited you.";
+                        }
+                    ?>
+                </h3>
+                <br>
+            </center>
+            <a href="<?php echo $this->inviteUrl; ?>" target="_blank" style="color: #FFFFFF;font-family: 'Brandon Grotesque',Helvetica, Arial, sans-serif;font-size: 16px;font-weight: bold;text-decoration: none;display: block !important;">
+            <table align="center" border="0" cellpadding="0" cellspacing="0" class="emailButton" style="border-radius: 3px;background-color: #FF6D6D;max-width: 400px !important;width: 100% !important;">
+                <tbody>
+                    <tr>
+                        <td align="center" valign="middle" class="emailButtonContent" style="padding-top:15px; padding-right:30px; padding-bottom:15px; padding-left:30px;">Join!</td>
+                    </tr>
+                </tbody>
+            </table>
+            </a>
+            <br>
+        </article>
+        <p align="center" style="font-size: 0.5em;font-family: "Brandon Grotesque", Helvetica, sans-serif;">
+            Alternatively, copy paste the link below in your browser <br> <a href="<?php echo $this->inviteUrl; ?>"><?php echo $this->inviteUrl; ?></a>
+        </p>
+        <br>
+        <hr align="center" width="60%">
+        <br>
+        <article class="bottom" style="float: none;width: 100%;text-align: center;background-color: #ffffff;">
+            <center>
+                <h3 style="font-weight: bold;">Once you’ve signed up to use BoM Squad,<br>
+you can get started right away.</h3>
+                <br>
+                <img src="<?php echo $this->imgBaseUrl ?>cloud-icon.png">
+                <h4 style="font-weight: bold;">CLOUD BASED</h4>
+                <h5 style="font-weight: normal;">For easy syncing, easy sharing, and access from anywhere.</h5>
+                <img src="<?php echo $this->imgBaseUrl ?>database-icon.png">
+                <h4 style="font-weight: bold;">DATABASED CENTRIC</h4>
+                <h5 style="font-weight: normal;">Quit trying to force spreadsheets to do a database’s job.</h5>
+                <img src="<?php echo $this->imgBaseUrl ?>dollar-icon.png">
+                <h4 style="font-weight: bold;">PAINLESS QUOTING</h4>
+                <h5 style="font-weight: normal;">Know what your manufacturer needs to provide you with an accurate quote quickly.</h5>
+                <img src="<?php echo $this->imgBaseUrl ?>cogs-icon.png">
+                <h4 style="font-weight: bold;">AUTOMATE</h4>
+                <h5 style="font-weight: normal;">Error checking and part matching.<br> Avoid expensive mistakes and optimize for price and availability.</h5>
+                <img src="<?php echo $this->imgBaseUrl ?>file-icon.png">
+                <h4 style="font-weight: bold;">A KEYSTONE DOCUMENT</h4>
+                <h5 style="font-weight: normal;">Easily reformat BoMs for purchasing, assembly, comparison, and inventory management.</h5>
+
+            </center>
+        </article>
+        <footer style="text-align: center;">
+            <br>
+            <hr align="center" width="60%">
+        </footer>
+        <p align="center" style="font-size: 0.5em;font-family: 'Brandon Grotesque', Helvetica, sans-serif;">
+            BoM Squad • <a href="http://www.bomsquad.io">www.bomsquad.io</a><br>
+            by Fabule • <a href="http://www.fabule.com">www.fabule.com</a><br>
+            780 Brewster Av. • Montreal, QC • H4C 1A8
+        </p>
+    </div>
+</body>
+</html>

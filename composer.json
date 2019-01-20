@@ -1,0 +1,115 @@
+{
+    "name": "fabule/bom",
+    "description": "BoM Manager application",
+    "license": "proprietary",
+    "require": {
+        "php": ">=5.5.0",
+        "ext-redis": "*",
+        "ext-newrelic": "*",
+        "zendframework/zendframework": "2.*",
+        "aws/aws-sdk-php-zf2": "1.*",
+        "doctrine/doctrine-orm-module": "0.7.*",
+        "doctrine/migrations": "dev-master",
+        "doctrine/doctrine-migrations-bundle": "dev-master",
+        "zf-commons/zfc-user": "*",
+        "zf-commons/zfc-user-doctrine-orm": "*",
+        "hounddog/doctrine-data-fixture-module": "0.0.*",
+        "zfcampus/zf-apigility": "~1.0",
+        "zfcampus/zf-apigility-documentation": "~1.0",
+        "zfcampus/zf-development-mode": "~2.0",
+        "goalio/goalio-forgotpassword": "1.*",
+        "goalio/goalio-forgotpassword-doctrine-orm": "1.*",
+        "goalio/goalio-rememberme": "1.*",
+        "goalio/goalio-rememberme-doctrine-orm": "1.*",
+        "widmogrod/zf2-assetic-module": "1.*",
+        "neeckeloo/newrelic": "1.1.*",
+        "bjyoungblood/bjy-authorize": "1.4.*",
+        "slm/queue": "0.4.*",
+        "slm/queue-sqs": "0.4.*",
+        "neeckeloo/monolog-module": "~0.1",
+        "zfr/zfr-pusher-module": "^1.0"
+    },
+    "require-dev": {
+        "heroku/heroku-buildpack-php": "*",
+        "zendframework/zend-developer-tools": "*",
+        "doctrine/data-fixtures": "*",
+        "zendframework/zftool": "dev-master",
+        "zendframework/zend-developer-tools": "dev-master",
+        "zfcampus/zf-apigility-admin": "~1.0",
+        "zfcampus/zf-apigility-welcome": "~1.0",
+        "zfcampus/zf-deploy": "~1.0",
+        "phpunit/phpunit": "3.7.*",
+        "phpunit/dbunit": "1.3.*"
+    },
+    "scripts": {
+        "compile": [
+            "php composer.phar run generate-classmaps",
+            "export DOCTRINE_CACHE=array && doctrine-module orm:generate-proxies",
+            "export DOCTRINE_CACHE=array && php public/index.php assetic build",
+            "rm -f data/cache/*.php"
+        ],
+        "compile-windows": [
+            "php composer.phar run generate-classmaps-windows",
+            "doctrine-module orm:generate-proxies",
+            "php public/index.php assetic build",
+            "rm -f data/cache/*.php"
+        ],
+        "clear-doctrine-cache": [
+            "doctrine-module orm:clear-cache:query --flush",
+            "doctrine-module orm:clear-cache:metadata --flush",
+            "doctrine-module orm:clear-cache:result --flush"
+        ],
+        "generate-classmaps": [
+            "classmap_generator.php -l \"module/Application/\" -w",
+            "classmap_generator.php -l \"module/API/\" -w",
+            "classmap_generator.php -l \"module/Bom/\" -w",
+            "classmap_generator.php -l \"module/FabuleTest/\" -w",
+            "classmap_generator.php -l \"module/FabuleUser/\" -w",
+            "classmap_generator.php -l \"module/FabuleUserOAuth2/\" -w"
+        ],
+        "generate-classmaps-windows": [
+            "classmap_generator.php.bat -l \"module/Application/\" -w",
+            "classmap_generator.php.bat -l \"module/API/\" -w",
+            "classmap_generator.php.bat -l \"module/Bom/\" -w",
+            "classmap_generator.php.bat -l \"module/FabuleTest/\" -w",
+            "classmap_generator.php.bat -l \"module/FabuleUser/\" -w",
+            "classmap_generator.php.bat -l \"module/FabuleUserOAuth2/\" -w"
+        ],
+        "drop-db": [
+            "doctrine-module orm:schema-tool:drop"
+        ],
+        "create-db": [
+            "doctrine-module orm:schema-tool:create",
+            "php composer.phar run import-fixtures"
+        ],
+        "update-db": [
+            "doctrine-module orm:schema-tool:update"
+        ],
+        "create-db-migration": [
+            "doctrine-module migrations:diff --configuration data/DoctrineORMModule/Migration/migrations-config.xml"
+        ],
+        "migrate-db": [
+            "doctrine-module migrations:migrate --no-interaction --configuration data/DoctrineORMModule/Migration/migrations-config.xml"
+        ],
+        "import-fixtures": [
+            "doctrine-module data-fixture:import"
+        ],
+        "generate-proxies": [
+            "doctrine-module orm:generate-proxies"
+        ],
+        "test": [
+            "php composer.phar run test-bom",
+            "php composer.phar run test-api",
+            "php composer.phar run test-fabuleuser"
+        ],
+        "test-bom": [
+            "phpunit --bootstrap module/Bom/test/Bootstrap.php"
+        ],
+        "test-api": [
+            "phpunit --bootstrap module/API/test/Bootstrap.php"
+        ],
+        "test-fabuleuser": [
+            "phpunit --bootstrap module/FabuleUser/test/Bootstrap.php"
+        ]
+    }
+}

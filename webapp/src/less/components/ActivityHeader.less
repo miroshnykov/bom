@@ -1,0 +1,24 @@
+.activity-header {
+	@margin: 5px;
+
+	button {
+		margin-top: 10px;
+		position: relative;
+
+		&:not(:first-child) {
+			margin-left: @margin;
+		}
+
+		&:not(:last-child) {
+			margin-right: @margin;
+		}
+
+		.badge {
+			background-color: @brand-danger !important;
+			display: inline-block;
+			position: absolute;
+			right: -7px;
+			top: -10px;
+		}
+	}
+}

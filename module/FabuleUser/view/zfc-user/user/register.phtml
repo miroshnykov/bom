@@ -1,0 +1,84 @@
+<?php
+$error = "";
+
+if (!$this->enableRegistration) {
+    print "Registration is disabled";
+    return;
+}
+$form = $this->registerForm;
+$form->prepare();
+$form->setAttribute('action', $this->url('zfcuser/register'));
+$form->setAttribute('method', 'post');
+
+
+//Format errors
+$error = "";
+$error .= $this->formElementErrors()
+        ->setMessageOpenFormat('<strong>')
+        ->setMessageSeparatorString('</strong><br/><strong>')
+        ->setMessageCloseString('</strong>')
+        ->render($form->get('email'));
+if($error)
+    $error .= "<br/>";
+$error .= $this->formElementErrors()
+        ->setMessageOpenFormat('<strong>')
+        ->setMessageSeparatorString('</strong><br/><strong>')
+        ->setMessageCloseString('</strong>')
+        ->render($form->get('password'));
+?>
+
+<div class="signup">
+    <header class="simple-header">
+        <div class="logo"></div>
+        <p><?php echo $this->translate('Sign up for a free account! It only takes a few seconds. Already have one?') ?>
+            <a href="<?php echo $this->url('zfcuser/login') . ($this->redirect ? '?redirect=' . $this->escapeUrl($this->redirect) : '') ?>"><?php echo $this->translate('Sign in here.') ?></a>
+        </p>
+    </header>
+    <div class="panel panel-primary">
+        <div class="panel-body">
+            <?php echo $this->form()->openTag($form) ?>
+
+            <div class="form-group">
+                <?php echo $this->formLabel($form->get('email')) ?>
+                <div class="col-md-10">
+                    <?php echo $this->formInput($form->get('email')) ?>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <?php echo $this->formLabel($form->get('password')) ?>
+                <div class="col-md-10">
+                    <?php echo $this->formInput($form->get('password')) ?>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-10 col-md-offset-2">
+                    By clicking sign up, I agree to the <a target="_blank" href="http://bomsquad.io/policies/terms-of-service/">Terms of Service</a> and the <a target="_blank" href="http://bomsquad.io/policies/privacy-policy/">Privacy Policy</a>.
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-10 col-md-offset-2">
+                  <?php echo $this->formButton($form->get('submit')) ?>
+                </div>
+              </div>
+
+            <?php if ($error) { ?>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <div class="alert alert-danger alert-dismissible" role="alert">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <strong><?= $error ?></strong>
+                        </div>
+                    </div>
+                </div>
+            <?php } ?>
+
+            <?php if ($this->redirect): ?>
+                <input type="hidden" name="redirect" value="<?php echo $this->escapeHtml($this->redirect) ?>" />
+            <?php endif ?>
+            <?php echo $this->form()->closeTag() ?>
+        </div>
+    </div>
+</div>
